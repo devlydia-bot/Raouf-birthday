@@ -1,0 +1,854 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #5a0012;
+}
+
+
+.background {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        #4d0010,
+        #700018,
+        #8f1638
+    );
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 50px 20px 80px;
+}
+
+
+/* =========================
+   BOOK
+========================= */
+
+
+.book {
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    z-index: 5;
+}
+
+
+.counter {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   CHAPTERS
+========================= */
+
+
+.chapter {
+    display: none;
+    width: 100%;
+}
+
+
+.chapter.active {
+    display: block;
+}
+
+
+.card {
+    width: 100%;
+    background: #fffdfd;
+    border: 4px solid #f6b5c7;
+    border-radius: 32px;
+
+    padding: 45px 40px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+
+    animation: cardAppear 0.6s ease;
+
+    /*
+    The box grows naturally with the text.
+    It does NOT have a fixed height.
+    */
+    height: auto;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    font-family: 'DM Serif Display', serif;
+
+    font-size: 38px;
+    line-height: 1.3;
+
+    color: #790019;
+}
+
+
+h2 {
+    font-family: 'DM Serif Display', serif;
+    color: #790019;
+    font-size: 27px;
+}
+
+
+p {
+    margin: 0;
+
+    color: #4d1b27;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+
+button {
+    border: none;
+
+    padding: 13px 27px;
+
+    border-radius: 30px;
+
+    background: #790019;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+button:hover {
+    background: #c94d70;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(121, 0, 25, 0.25);
+}
+
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   START BUTTON
+========================= */
+
+
+.start-button {
+    margin-top: 15px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+
+.navigation {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 22px;
+}
+
+
+/* =========================
+   MEMORY BOX
+========================= */
+
+
+.memory-box {
+    margin-top: 30px;
+
+    padding: 30px 20px;
+
+    background: #fff0f4;
+
+    border: 2px solid #f6b5c7;
+
+    border-radius: 25px;
+}
+
+
+.closed-box {
+    font-size: 75px;
+
+    margin-bottom: 10px;
+
+    transition: transform 0.5s ease;
+}
+
+
+.memory-box button {
+    margin-top: 10px;
+}
+
+
+.memory-content {
+    display: none;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #f6b5c7;
+}
+
+
+.memory-content.show {
+    display: block;
+
+    animation: cardAppear 0.5s ease;
+}
+
+
+/* =========================
+   LOVE GAME
+========================= */
+
+
+.love-game {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+
+    min-height: 80px;
+}
+
+
+#yesBtn {
+    background: #790019;
+
+    transform-origin: center;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+#noBtn {
+    background: #f3a8bd;
+
+    color: #790019;
+}
+
+
+#gameMessage {
+    min-height: 35px;
+
+    margin-top: 25px;
+
+    color: #790019;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   TEDDY
+========================= */
+
+
+.teddy-container {
+    display: none;
+
+    position: relative;
+
+    width: 170px;
+
+    height: 150px;
+
+    margin: 25px auto 0;
+}
+
+
+.teddy-container.show {
+    display: block;
+
+    animation: teddyAppear 0.8s ease;
+}
+
+
+.teddy {
+    position: absolute;
+
+    left: 30px;
+
+    bottom: 0;
+
+    font-size: 105px;
+
+    line-height: 1;
+}
+
+
+.teddy-heart {
+    position: absolute;
+
+    top: 0;
+
+    left: 100px;
+
+    font-size: 45px;
+
+    animation: heartFloat 1.5s ease-in-out infinite;
+}
+
+
+@keyframes teddyAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+@keyframes heartFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(8deg);
+    }
+
+}
+
+
+/* =========================
+   SECRET HEARTS
+========================= */
+
+
+.secret-hearts {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 35px;
+
+    margin-top: 40px;
+
+    min-height: 160px;
+}
+
+
+.secret-heart {
+    position: relative;
+
+    width: 65px;
+
+    min-height: 65px;
+
+    font-size: 52px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+
+.secret-heart:nth-child(1) {
+    transform: rotate(-12deg) translateY(10px);
+}
+
+
+.secret-heart:nth-child(2) {
+    transform: rotate(8deg) translateY(-5px);
+}
+
+
+.secret-heart:nth-child(3) {
+    transform: rotate(-6deg) translateY(20px);
+}
+
+
+.secret-heart:nth-child(4) {
+    transform: rotate(14deg) translateY(0);
+}
+
+
+.secret-heart:nth-child(5) {
+    transform: rotate(-10deg) translateY(15px);
+}
+
+
+.secret-heart:hover {
+    transform: scale(1.15) rotate(0deg);
+}
+
+
+.secret-heart span {
+    display: none;
+
+    position: absolute;
+
+    top: 75px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 180px;
+
+    color: #790019;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    font-weight: 500;
+}
+
+
+.secret-heart.open span {
+    display: block;
+
+    animation: secretAppear 0.5s ease;
+}
+
+
+@keyframes secretAppear {
+
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+}
+
+
+/* =========================
+   SIGNATURE
+========================= */
+
+
+.signature {
+    display: inline-block;
+
+    margin: 0 5px;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 45px;
+
+    color: #790019;
+
+    transform: rotate(-4deg);
+}
+
+
+/* =========================
+   REAL BALLOONS
+========================= */
+
+
+.balloon {
+    position: absolute;
+
+    width: 72px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    z-index: 1;
+
+    animation: balloonFloat 14s linear infinite;
+
+    box-shadow:
+        inset -10px -12px 15px rgba(0, 0, 0, 0.12),
+        inset 10px 8px 15px rgba(255, 255, 255, 0.35);
+}
+
+
+/* Balloon knot */
+
+.balloon::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -7px;
+
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+
+    border-top: 10px solid currentColor;
+}
+
+
+/* Curved string */
+
+.balloon-string {
+    position: absolute;
+
+    top: 88px;
+
+    left: 50%;
+
+    width: 70px;
+
+    height: 170px;
+
+    border-left: 2px solid rgba(255, 230, 238, 0.8);
+
+    border-radius: 50%;
+
+    transform-origin: top center;
+
+    transform: rotate(15deg);
+}
+
+
+/* Balloon positions */
+
+
+.balloon-1 {
+    left: 5%;
+
+    bottom: -130px;
+
+    animation-delay: 0s;
+}
+
+
+.balloon-2 {
+    left: 25%;
+
+    bottom: -180px;
+
+    animation-delay: 3s;
+
+    transform: scale(0.85);
+}
+
+
+.balloon-3 {
+    right: 25%;
+
+    bottom: -150px;
+
+    animation-delay: 6s;
+
+    transform: scale(0.9);
+}
+
+
+.balloon-4 {
+    right: 5%;
+
+    bottom: -120px;
+
+    animation-delay: 1s;
+
+    transform: scale(0.8);
+}
+
+
+/* Colors */
+
+
+.balloon-red {
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #d95776,
+            #8b001f 55%,
+            #5a0013
+        );
+
+    color: #8b001f;
+}
+
+
+.balloon-pink {
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #fff0f5,
+            #f3a8bd 55%,
+            #d86c8b
+        );
+
+    color: #f3a8bd;
+}
+
+
+.balloon-white {
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff,
+            #f7dfe7 60%,
+            #e8b8c6
+        );
+
+    color: #f7dfe7;
+}
+
+
+@keyframes balloonFloat {
+
+    0% {
+        transform: translateY(0) rotate(-4deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50vh) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(-125vh) rotate(-5deg);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media (max-width: 600px) {
+
+    .background {
+        padding: 30px 12px 60px;
+    }
+
+
+    .book {
+        width: 100%;
+    }
+
+
+    .card {
+        padding: 30px 20px;
+
+        border-radius: 25px;
+    }
+
+
+    h1 {
+        font-size: 29px;
+    }
+
+
+    h2 {
+        font-size: 23px;
+    }
+
+
+    p {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+
+    .navigation {
+        gap: 12px;
+    }
+
+
+    button {
+        padding: 12px 22px;
+
+        font-size: 14px;
+    }
+
+
+    .balloon {
+        width: 55px;
+
+        height: 70px;
+    }
+
+
+    .balloon-string {
+        top: 68px;
+
+        width: 50px;
+
+        height: 120px;
+    }
+
+
+    .secret-hearts {
+        gap: 20px;
+    }
+
+
+    .secret-heart {
+        width: 50px;
+
+        font-size: 42px;
+    }
+
+
+    .secret-heart span {
+        width: 150px;
+
+        font-size: 13px;
+    }
+
+}
+
+```css
+#memoryContent {
+    width: 100%;
+    text-align: center;
+}
+
+#memoryContent .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+
+#memoryContent .photo-gallery img {
+    display: block;
+    width: 140px;
+    height: auto;
+    max-width: 100%;
+    flex: 0 1 140px;
+    object-fit: contain;
+    box-sizing: border-box;
+    border: 5px solid white;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: rotate(-4deg);
+}
+
+#memoryContent .photo-gallery img:nth-child(even) {
+    transform: rotate(4deg);
+}
+
+@media (max-width: 480px) {
+    #memoryContent .photo-gallery img {
+        width: 110px;
+        flex-basis: 110px;
+    }
+}
+```
